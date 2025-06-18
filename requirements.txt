@@ -1,0 +1,13 @@
+Python version : 3.13.1
+
+numpy version: 2.2.2
+
+pandas version: 2.2.3
+
+matplotlib version: 3.10.0
+
+seaborn version: 0.13.2
+
+Scikit-learn version: 1.6.1
+
+xgboost version: 3.0.2
