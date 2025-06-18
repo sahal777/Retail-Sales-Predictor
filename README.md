@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 🛒 Retail Sales Predictor
 This project aims to predict the sales of products across various retail outlets using machine learning. By analyzing past sales data and outlet characteristics, we trained a regression model that forecasts sales — helping improve inventory management, marketing, and operational decisions.
 
@@ -109,3 +110,7 @@ Edit
 jupyter notebook big_mart.ipynb
 ✍️ Author
 Muhammed Sahal A A
+=======
+# Retail-Sales-Predictor
+Predicting sales for BigMart retail stores using machine learning. Includes data cleaning, EDA, feature engineering, XGBoost model training, and business insights from predictions. A complete regression-based sales forecasting pipeline.
+>>>>>>> cc7ec26fd6ee3266e1aec135518ce5e0b0d05164
