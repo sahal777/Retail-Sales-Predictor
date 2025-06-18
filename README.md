@@ -1,116 +1,117 @@
-<<<<<<< HEAD
-🛒 Retail Sales Predictor
-This project aims to predict the sales of products across various retail outlets using machine learning. By analyzing past sales data and outlet characteristics, we trained a regression model that forecasts sales — helping improve inventory management, marketing, and operational decisions.
+# 🛒 Retail Sales Predictor
 
-📌 Project Overview
-Dataset: Big Mart sales dataset with 8523 training records and 5681 test records.
+Predict future sales for retail products across different store types using machine learning!  
+This project leverages the Big Mart sales dataset to forecast product sales, providing actionable insights for inventory management, marketing, and operational decision-making.
 
-Goal: Predict Item_Outlet_Sales for products in different stores using product and outlet features.
+---
 
-Model Used: XGBoost Regressor (gradient boosting technique suitable for tabular data).
+## 📌 Project Overview
 
-🧑‍💻 Features Used
-Product-related features:
+- **Dataset**: Big Mart sales dataset  
+  - 8,523 training records
+  - 5,681 test records
 
-Item_Weight
+- **Goal**: Predict `Item_Outlet_Sales` for various products across multiple stores using both product and outlet characteristics.
 
-Item_Fat_Content
+- **Model Used**:  
+  - XGBoost Regressor (a powerful gradient boosting technique for tabular data)
 
-Item_Visibility
+---
 
-Item_Type
+## 🧑‍💻 Features Used
 
-Item_MRP
+### Product Features
+- `Item_Weight`
+- `Item_Fat_Content`
+- `Item_Visibility`
+- `Item_Type`
+- `Item_MRP`
 
-Outlet-related features:
+### Outlet Features
+- `Outlet_Size`
+- `Outlet_Location_Type`
+- `Outlet_Type`
+- `Outlet_Establishment_Year` (engineered into `Outlet_Age`)
 
-Outlet_Size
+_All categorical variables are label encoded. Missing values are handled appropriately._
 
-Outlet_Location_Type
+---
 
-Outlet_Type
+## ⚙️ Workflow
 
-Outlet_Establishment_Year → transformed into a new feature Outlet_Age
+### 1. Data Preprocessing
+- Handle missing values (`Item_Weight`, `Outlet_Size`)
+- Engineer new feature: `Outlet_Age` (current year - establishment year)
+- Remove non-useful identifiers (`Item_Identifier`, `Outlet_Identifier`)
+- Label encode all categorical columns
 
-🔧 All categorical variables were encoded using Label Encoding. Missing values were handled appropriately.
+### 2. Model Training
+- Model: XGBoost Regressor
+- Train-validation split: 75% train, 25% validation
+- **Evaluation Metric:** R² Score  
+  - Training R² Score: ~0.80  
+  - Validation R² Score: ~0.53–0.60 (after feature engineering to reduce overfitting)
 
-⚙️ Workflow
-Data Preprocessing:
+### 3. Prediction & Visualization
+- Generate predictions for the test dataset
+- Visualize:
+  - Predicted vs. actual sales on training data
+  - Prediction distribution on test data
+  - Key insights and trends from model output
 
-Handled missing values (Item_Weight, Outlet_Size)
+---
 
-Created a new feature: Outlet_Age
+## 📊 Visualizations
 
-Removed non-useful identifiers like Item_Identifier and Outlet_Identifier
+- **Predicted vs Actual Sales**: Assess model fit on training data
+- **Test Data Distribution**: Understand the range of predicted sales
+- **Feature Impact Graphs**: Insights into important variables
 
-Label encoded categorical columns
+---
 
-Model Training:
+## 📁 Requirements
 
-Trained on XGBoost Regressor
+Install dependencies:
 
-Train-validation split (75:25)
-
-Evaluated using R² Score
-
-Evaluation Results:
-
-Training R² Score: ~0.80
-
-Validation R² Score: ~0.53–0.60
-
-Added feature engineering to reduce overfitting
-
-Prediction:
-
-Predictions generated for the test dataset
-
-Visualizations created to better understand prediction patterns
-
-📊 Visualizations
-Predicted vs actual sales on training data
-
-Predicted distribution for test data
-
-Graphs highlighting model insights
-
-📁 Requirements
-Install dependencies with:
-
-bash
-Copy
-Edit
+```bash
 pip install -r requirements.txt
-Includes:
+```
 
-numpy
+**Main packages:**
+- numpy
+- pandas
+- matplotlib
+- seaborn
+- scikit-learn
+- xgboost
 
-pandas
+---
 
-matplotlib
+## 🚀 Usage
 
-seaborn
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/sahal777/Retail-Sales-Predictor.git
+    cd Retail-Sales-Predictor
+    ```
 
-scikit-learn
+2. **Run the notebook:**
+    ```bash
+    jupyter notebook big_mart.ipynb
+    ```
 
-xgboost
+---
 
-🚀 Usage
-Clone the repo:
+## ✍️ Author
 
-bash
-Copy
-Edit
-git clone https://github.com/sahal777/Retail-Sales-Predictor.git
-Navigate into the folder and run the notebook:
+**Muhammed Sahal A A**  
+[GitHub: sahal777](https://github.com/sahal777)
 
-bash
-Copy
-Edit
-jupyter notebook big_mart.ipynb
-✍️ Author
-Muhammed Sahal A A
-=======
-# Retail-Sales-Predictor
-Predicting sales for BigMart retail stores using machine learning. Includes data cleaning, EDA, feature engineering, XGBoost model training, and business insights from predictions. A complete regression-based sales forecasting pipeline.
->>>>>>> cc7ec26fd6ee3266e1aec135518ce5e0b0d05164
+---
+
+## 📢 Contributions
+
+Feel free to fork, create issues, or submit pull requests!  
+For questions or suggestions, open an issue in the repository.
+
+---
